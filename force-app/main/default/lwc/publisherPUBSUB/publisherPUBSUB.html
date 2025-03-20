@@ -1,0 +1,15 @@
+<!--
+  @description       : 
+  @author            : Shantanu Rajurkar
+  @group             : 
+  @last modified on  : 03-20-2025
+  @last modified by  : Shantanu Rajurkar
+-->
+<template>
+    <lightning-card title="PUBSUB Publisher Element">
+        <div>
+            <lightning-input label="Enter the message" onchange={HandleChange} value={msg}></lightning-input>
+            <lightning-button label="Publish" onclick={Publish} variant="brand"></lightning-button>
+        </div>        
+    </lightning-card>
+</template>
