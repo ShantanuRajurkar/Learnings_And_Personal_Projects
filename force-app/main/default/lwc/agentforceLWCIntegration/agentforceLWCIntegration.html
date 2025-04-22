@@ -1,0 +1,28 @@
+<!--
+  @description       : 
+  @author            : Shantanu Rajurkar
+  @group             : 
+  @last modified on  : 04-22-2025
+  @last modified by  : Shantanu Rajurkar
+-->
+<template>
+    <lightning-card title="Agentforce Chat" icon-name="standard:bot">
+        <div class="chat-container slds-p-around_small">
+            <template for:each={messages} for:item="msg">
+                <div key={msg.id} class={msg.cssClass}>
+                    {msg.content}
+                </div>
+            </template>
+        </div>
+        <footer class="chat-input">
+            <lightning-input
+                class="chat-input-field"
+                placeholder="Type your message..."
+                value={currentPrompt}
+                onchange={handleInputChange}
+                onkeydown={handleKeyDown}>
+            </lightning-input>
+            <lightning-button label="Send" onclick={handleSend} class="chat-send-button"></lightning-button>
+        </footer>
+    </lightning-card>
+</template>
