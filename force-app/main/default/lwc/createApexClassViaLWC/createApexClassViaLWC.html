@@ -1,0 +1,39 @@
+<!--
+  @description       : 
+  @author            : Shantanu Rajurkar
+  @group             : 
+  @last modified on  : 05-10-2025
+  @last modified by  : Shantanu Rajurkar
+-->
+<template>
+    <lightning-card title="Create Apex Class">
+      <div class="slds-p-around_medium">
+        <!-- Input for class name -->
+        <lightning-input 
+          label="Class Name" 
+          value={className} 
+          onchange={handleNameChange} 
+          required
+        ></lightning-input>
+        <!-- Multi-line input for class body -->
+        <lightning-textarea 
+          label="Class Body" 
+          value={classBody} 
+          onchange={handleBodyChange} 
+          required
+        ></lightning-textarea>
+        <!-- Create button triggers the Apex call -->
+        <lightning-button 
+          label="Create" 
+          onclick={createClass} 
+          variant="brand"
+        ></lightning-button>
+        <!-- Display any error message -->
+        <template if:true={errorMsg}>
+          <div class="slds-text-color_error slds-m-top_small">
+            {errorMsg}
+          </div>
+        </template>
+      </div>
+    </lightning-card>
+  </template>
